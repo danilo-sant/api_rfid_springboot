@@ -4,9 +4,15 @@ FROM eclipse-temurin:17-jdk-jammy
 # Define o diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copia os arquivos do Maven para baixar as dependências primeiro (cache)
+# Copia os arquivos do Maven
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
+
+# =================================================================
+# --- CORREÇÃO ADICIONADA AQUI ---
+# Dá permissão de execução para o script do Maven Wrapper
+RUN chmod +x mvnw
+# =================================================================
 
 # Baixa as dependências
 RUN ./mvnw dependency:go-offline
