@@ -1,8 +1,8 @@
 ### Registrar uma nova leitura de RFID
-POST http://localhost:8080/api/leitura
+POST https://api-rfid-springboot.onrender.com/api/leitura
 Content-Type: application/json
 
 {
-  "rfid_tag": "JAVASPRING_OK",
-  "leitor_id": "TESTE_INTELLIJ_01"
+  "rfid_tag": "JAVASPRING_OK_2",
+  "leitor_id": "TESTE_INTELLIJ_02"
 }
